@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile | LiteracyAI</title>
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+
+        <div class="brand">
+            <div class="logo-icon">📚</div>
+
+            <div>
+                <h2>LiteracyAI</h2>
+                <p>Intelligent Literacy Assistance Platform</p>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <span id="navUserName">Learner</span>
+
+            <button id="logoutBtn" class="logout-btn">
+                Logout
+            </button>
+        </div>
+
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="main-container">
+
+        <!-- Welcome Section -->
+        <section class="welcome-banner">
+
+            <div>
+                <p class="welcome-text">WELCOME BACK</p>
+
+                <h1 id="welcomeName">
+                    Welcome, Learner!
+                </h1>
+
+                <p>
+                    Continue your learning journey and improve your literacy skills.
+                </p>
+            </div>
+
+            <div class="welcome-icon">
+                🎓
+            </div>
+
+        </section>
+
+
+        <!-- Profile Information -->
+        <section class="profile-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h2>My Profile</h2>
+                    <p>View your basic learner information</p>
+                </div>
+
+                <button class="edit-btn">
+                    Edit Profile
+                </button>
+
+            </div>
+
+
+            <div class="profile-card">
+
+                <div class="profile-avatar">
+                    <span id="avatarLetter">L</span>
+                </div>
+
+
+                <div class="profile-info">
+
+                    <div class="info-item">
+                        <span class="label">Full Name</span>
+                        <span class="value" id="profileName">
+                            Learner Name
+                        </span>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span class="label">Email Address</span>
+                        <span class="value" id="profileEmail">
+                            learner@email.com
+                        </span>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span class="label">Age</span>
+                        <span class="value" id="profileAge">
+                            --
+                        </span>
+                    </div>
+
+
+                    <div class="info-item">
+                        <span class="label">Preferred Language</span>
+                        <span class="value" id="profileLanguage">
+                            English
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Proficiency Section -->
+        <section class="proficiency-section">
+
+            <div class="section-title">
+
+                <h2>My Proficiency</h2>
+
+                <p>
+                    Your current literacy skill levels
+                </p>
+
+            </div>
+
+
+            <div class="proficiency-grid">
+
+                <!-- Reading -->
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        📖
+                    </div>
+
+                    <h3>Reading</h3>
+
+                    <p id="readingLevel">
+                        Beginner
+                    </p>
+
+                </div>
+
+
+                <!-- Writing -->
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        ✍️
+                    </div>
+
+                    <h3>Writing</h3>
+
+                    <p id="writingLevel">
+                        Beginner
+                    </p>
+
+                </div>
+
+
+                <!-- Vocabulary -->
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        📚
+                    </div>
+
+                    <h3>Vocabulary</h3>
+
+                    <p id="vocabularyLevel">
+                        Beginner
+                    </p>
+
+                </div>
+
+
+                <!-- Comprehension -->
+                <div class="skill-card">
+
+                    <div class="skill-icon">
+                        🧠
+                    </div>
+
+                    <h3>Comprehension</h3>
+
+                    <p id="comprehensionLevel">
+                        Beginner
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Overall Level -->
+        <section class="overall-section">
+
+            <div class="overall-card">
+
+                <div>
+                    <p class="overall-label">
+                        Overall Proficiency Level
+                    </p>
+
+                    <h2 id="overallLevel">
+                        Beginner
+                    </h2>
+                </div>
+
+                <div class="overall-icon">
+                    ⭐
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="profile.js"></script>
+
+</body>
+
+</html>

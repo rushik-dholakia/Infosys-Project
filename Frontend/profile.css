@@ -1,0 +1,464 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 75px;
+
+    background: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 60px;
+
+    border-bottom: 1px solid #e2e8f0;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.logo-icon {
+    font-size: 30px;
+}
+
+
+.brand h2 {
+    font-size: 22px;
+}
+
+
+.brand p {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 3px;
+}
+
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-weight: 500;
+}
+
+
+.logout-btn {
+    padding: 9px 18px;
+
+    border: none;
+
+    background: #ef4444;
+
+    color: white;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.logout-btn:hover {
+    background: #dc2626;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.main-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 40px 25px;
+}
+
+
+/* =========================
+   WELCOME BANNER
+========================= */
+
+.welcome-banner {
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #4f46e5
+    );
+
+    color: white;
+
+    padding: 35px 40px;
+
+    border-radius: 16px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+.welcome-text {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+
+    margin-bottom: 8px;
+}
+
+
+.welcome-banner h1 {
+    font-size: 32px;
+
+    margin-bottom: 10px;
+}
+
+
+.welcome-banner p {
+    opacity: 0.9;
+}
+
+
+.welcome-icon {
+    font-size: 70px;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-section {
+    margin-bottom: 40px;
+}
+
+
+.section-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+.section-header h2 {
+    margin-bottom: 5px;
+}
+
+
+.section-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+.edit-btn {
+    padding: 10px 18px;
+
+    border: 1px solid #4f46e5;
+
+    background: white;
+
+    color: #4f46e5;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.edit-btn:hover {
+    background: #4f46e5;
+    color: white;
+}
+
+
+/* Profile Card */
+
+.profile-card {
+    background: white;
+
+    border-radius: 14px;
+
+    padding: 30px;
+
+    display: flex;
+
+    gap: 40px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.profile-avatar {
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #4f46e5;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 35px;
+
+    font-weight: bold;
+
+    flex-shrink: 0;
+}
+
+
+.profile-info {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.info-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+
+.label {
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+.value {
+    font-size: 16px;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   PROFICIENCY
+========================= */
+
+.proficiency-section {
+    margin-bottom: 35px;
+}
+
+
+.section-title {
+    margin-bottom: 20px;
+}
+
+
+.section-title h2 {
+    margin-bottom: 5px;
+}
+
+
+.section-title p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+.proficiency-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.skill-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 14px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s;
+}
+
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+
+.skill-icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+
+.skill-card h3 {
+    margin-bottom: 8px;
+}
+
+
+.skill-card p {
+    color: #4f46e5;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   OVERALL LEVEL
+========================= */
+
+.overall-card {
+    background: white;
+
+    padding: 25px 35px;
+
+    border-radius: 14px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+.overall-label {
+    color: #64748b;
+
+    margin-bottom: 8px;
+}
+
+
+.overall-card h2 {
+    color: #4f46e5;
+
+    font-size: 28px;
+}
+
+
+.overall-icon {
+    font-size: 45px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .proficiency-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+
+    .brand p {
+        display: none;
+    }
+
+
+    .main-container {
+        padding: 25px 15px;
+    }
+
+
+    .welcome-banner {
+        padding: 25px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+
+    .profile-card {
+        flex-direction: column;
+    }
+
+
+    .profile-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .proficiency-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .section-header {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+}
