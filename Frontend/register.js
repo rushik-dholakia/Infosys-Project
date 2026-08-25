@@ -1,10 +1,8 @@
 const registerForm = document.getElementById("registerForm");
 
-
-registerForm.addEventListener("submit", function (event) {
+registerForm.addEventListener("submit", async function (event) {
 
     event.preventDefault();
-
 
     const fullName = document
         .getElementById("fullName")
@@ -34,7 +32,6 @@ registerForm.addEventListener("submit", function (event) {
 
 
     // Check empty fields
-
     if (
         fullName === "" ||
         email === "" ||
@@ -43,60 +40,78 @@ registerForm.addEventListener("submit", function (event) {
         password === "" ||
         confirmPassword === ""
     ) {
-
         alert("Please fill in all fields.");
-
         return;
     }
 
 
-    // Validate age
-
-    if (age < 5 || age > 100) {
-
-        alert("Please enter a valid age.");
-
-        return;
-    }
-
-
-    // Validate password length
-
+    // Check password length
     if (password.length < 6) {
-
         alert("Password must contain at least 6 characters.");
-
         return;
     }
 
 
-    // Check passwords
-
+    // Check passwords match
     if (password !== confirmPassword) {
-
         alert("Passwords do not match.");
-
         return;
     }
 
 
-    // Temporary frontend registration
-
-    console.log("New Learner:");
-
-    console.log("Name:", fullName);
-    console.log("Email:", email);
-    console.log("Age:", age);
-    console.log("Preferred Language:", language);
-
-
-    alert(
-        "Registration successful! Please login with your new account."
-    );
+    // Data to send to FastAPI
+    const learnerData = {
+        full_name: fullName,
+        email: email,
+        password: password,
+        age: Number(age),
+        preferred_language: language
+    };
 
 
-    // Redirect to existing login page
+    try {
 
-    window.location.href = "login.html";
+        const response = await fetch(
+            "http://127.0.0.1:8000/register",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(learnerData)
+            }
+        );
+
+
+        const data = await response.json();
+
+
+        // Registration failed
+        if (!response.ok) {
+
+            alert(data.detail || "Registration failed.");
+
+            return;
+        }
+
+
+        // Registration successful
+        alert("Registration successful! Please login.");
+
+        window.location.href = "login.html";
+
+    }
+
+    catch (error) {
+
+        console.error("Error:", error);
+
+        alert(
+            "Unable to connect to the server. Make sure the FastAPI backend is running."
+        );
+
+    }
 
 });
