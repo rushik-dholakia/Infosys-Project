@@ -16,12 +16,6 @@ loginForm.addEventListener("submit", function (event) {
         return;
     }
 
-
-    console.log("Login attempt");
-
-    console.log("Email:", email);
-
-
     // Backend connection will be added later
 
 window.location.href = "profile.html";
