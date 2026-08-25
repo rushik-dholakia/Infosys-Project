@@ -103,6 +103,10 @@ class LearnerLogin(BaseModel):
     email: str
     password: str
 
+class ForgotPassword(BaseModel):
+    email: str
+    new_password: str
+
 
 # =====================================
 # HOME API
@@ -264,4 +268,54 @@ def login_learner(learner: LearnerLogin):
             "full_name": user["full_name"],
             "email": user["email"]
         }
+    }
+
+# =====================================
+# FORGOT PASSWORD API
+# =====================================
+
+@app.post("/forgot-password")
+def forgot_password(user: ForgotPassword):
+
+    conn = get_db_connection()
+
+    cursor = conn.cursor()
+
+    # Check if the email exists
+    cursor.execute(
+        "SELECT id FROM learners WHERE email = ?",
+        (user.email,)
+    )
+
+    existing_user = cursor.fetchone()
+
+    # If email does not exist
+    if existing_user is None:
+
+        conn.close()
+
+        raise HTTPException(
+            status_code=404,
+            detail="Email is not registered"
+        )
+
+    # Update password
+    cursor.execute(
+        """
+        UPDATE learners
+        SET password = ?
+        WHERE email = ?
+        """,
+        (
+            user.new_password,
+            user.email
+        )
+    )
+
+    conn.commit()
+
+    conn.close()
+
+    return {
+        "message": "Password reset successful"
     }
